@@ -1,6 +1,7 @@
 
 import os
 from pathlib import Path
+import cloudinary_storage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,6 +31,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
      'corsheaders',
      'claims',
+     'cloudinary',
+     'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +134,10 @@ EMAIL_USE_TLS = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
+CLOUDINARY_STORAGE ={
+    'CLOUD_NAME':'dvdmvkgy5',
+    'API_KEY':'786256928354919',
+    'API_SECRET':'PiB9u9fpNTsPYgsUmkeD4JUc_bQ'
+}
+
+DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
